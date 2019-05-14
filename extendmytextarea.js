@@ -1,9 +1,10 @@
+(() => {
 function makeExpandingArea(el) {
   	var timer = null;
   	//由于ie8有溢出堆栈问题，故调整了这里
   	var setStyle = function(el, auto) {
   		if (auto) el.style.height = 'auto';
-  		el.style.height = el.scrollHeight + 'px';
+  		el.style.height = el.scrollHeight +5+ 'px';
   	}
   	var delayedResize = function(el) {
   		if (timer) {
@@ -57,7 +58,18 @@ function makeExpandingArea(el) {
   	}
   }
 
-  var textarea = document.getElementById('tp');
-  textarea.scrollHeight = 60
-  textarea.style.height = "60px"
-  makeExpandingArea(textarea);
+//   var textarea = document.getElementById('tp');
+//   textarea.scrollHeight = 60
+//   textarea.style.height = "60px"
+//   makeExpandingArea(textarea);
+setmytextareinit("tp","tp2")
+function setmytextareinit(...id){
+    for(value of id){
+        var textarea = document.getElementById(value);
+        textarea.scrollHeight = 60
+        textarea.style.height = "60px"
+        makeExpandingArea(textarea);
+    }
+    
+}
+})();
