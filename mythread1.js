@@ -1,11 +1,12 @@
+(() => {
 importScripts("https://cdn.staticfile.org/decimal.js/10.1.1/decimal.min.js");
 // importScripts("./decimal.min.js");
 var piwei;
 addEventListener('message', function(event) {
 	piwei = event.data[0];
-	threadall = event.data[1];
-	threadid = event.data[2];
-	console.log("副线程" + (threadid + 1) + "接收" + "event.data\n" + event.data);
+var	threadall = event.data[1];
+var	threadid = event.data[2];
+	console.log("副线程" + (threadid + 1) + "从主线程接收" + "event.data\n" + event.data);
 
 	Decimal.precision = piwei + 1;
 	var p = new Decimal(0);
@@ -40,3 +41,4 @@ addEventListener('message', function(event) {
 	postMessage(["" + p, "" + x.plus(1)]);
 
 })
+})()
