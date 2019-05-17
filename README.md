@@ -1,6 +1,49 @@
 # Pi-calculation-multithreading
 Pi calculation, multithreading, based on large number frames decimal.js and webworker 圆周率计算，多线程，基于大数框架decimal.js和webworker 圆周率计算-可设置圆周率位数-可选择线程个数-多线程大数框架webworker输出useragent大数框架
 
+# 圆周率计算多线程,使用 BigInteger.js和浏览器原生的BigInt之后速度得到巨大提升!
+
+需要浏览器chrome68以上,才原生支持BigInt
+
+ <h3>BigInteger.js</h3>
+        <p>
+          BigInteger.js是Javascript的任意长度整数库，允许对无限大小的整数进行算术运算，尽管存在内存和时间限制。
+          更新（2018年12月2日）：BigInt被添加为JavaScript的本机功能。
+          此库现在可用作polyfill：如果环境支持本机BigInt，则此库充当本机实现的瘦包装器。
+          建议升级浏览器到chrome68以上,才可支持原生BigInt.
+          <b>如果浏览器原生支持BigInt,则运行速度有巨大提升!</b>
+        </p>
+
+<a href="https://masx200.github.io/%E5%9C%86%E5%91%A8%E7%8E%87%E8%AE%A1%E7%AE%97-%E5%8F%AF%E8%AE%BE%E7%BD%AE%E5%9C%86%E5%91%A8%E7%8E%87%E4%BD%8D%E6%95%B0-%E5%8F%AF%E9%80%89%E6%8B%A9%E7%BA%BF%E7%A8%8B%E4%B8%AA%E6%95%B0-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%A4%A7%E6%95%B0%E6%A1%86%E6%9E%B6webworker%E8%BE%93%E5%87%BAuseragent%E5%A4%A7%E6%95%B0%E6%A1%86%E6%9E%B6/index.html">圆周率计算多线程</a>
+
+
+ <h3>计算运行速度排行:</h3>
+        <br />1.原生BigInt最快,<br />2.BigInteger.js中速,<br />3.Decimal.js最慢。
+        <hr>
+        <br />
+        <h4> 线程数为4 圆周率计算6000位测试结果</h4>
+        <br />
+        firefox 66 测试 decimal.js 达到1倍速度
+        <br />
+        firefox 66 测试 BigInteger.js 达到2.163倍速度
+        <br />
+        chrome 75 测试 decimal.js 达到3.4375倍速度
+        <br />
+        chrome 75 测试 原生BigInt 达到74.038倍速度
+        <p></p>
+        <hr>
+        <h4> 线程数为4 圆周率计算10000位测试结果</h4>
+        <br />
+        firefox 66 测试 decimal.js 达到1倍速度
+        <br />
+        firefox 66 测试 BigInteger.js 达到2.066倍速度
+        <br />
+        chrome 75 测试 decimal.js 达到3.688倍速度
+        <br />
+        chrome 75 测试 原生BigInt 达到100.773倍速度
+        <p></p>
+        <hr>
+        
 https://masx200.github.io/%E5%9C%86%E5%91%A8%E7%8E%87%E8%AE%A1%E7%AE%97-%E5%8F%AF%E8%AE%BE%E7%BD%AE%E5%9C%86%E5%91%A8%E7%8E%87%E4%BD%8D%E6%95%B0-%E5%8F%AF%E9%80%89%E6%8B%A9%E7%BA%BF%E7%A8%8B%E4%B8%AA%E6%95%B0-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%A4%A7%E6%95%B0%E6%A1%86%E6%9E%B6webworker%E8%BE%93%E5%87%BAuseragent%E5%A4%A7%E6%95%B0%E6%A1%86%E6%9E%B6/index.html
 
 可以测试浏览器的JavaScript运行引擎速度

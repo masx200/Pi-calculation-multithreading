@@ -1,101 +1,283 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link href="../myfontandtextalign.css" rel="stylesheet">
-        <link href="https://cdn.staticfile.org/twitter-bootstrap/3.4.1/css/bootstrap-theme.css" rel="stylesheet">
+  <head>
+    <!-- 升级bootstrap从3到4 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="../myfontandtextalign.css" rel="stylesheet" />
+    <!-- <link href="https://cdn.staticfile.org/twitter-bootstrap/3.4.1/css/bootstrap-theme.css" rel="stylesheet">
         <link href="https://cdn.staticfile.org/twitter-bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://cdn.staticfile.org/jquery/3.4.0/jquery.min.js"></script>
-        <script defer src="https://cdn.staticfile.org/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <style type="text/css">
-            * {
-                font-family: "Microsoft Yahei";
-                text-align: center
-            }
+        <script defer src="https://cdn.staticfile.org/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+    <style type="text/css">
+      * {
+        /* font-family: "Microsoft Yahei"; */
+        text-align: center;
+      }
 
-            /* #nav {
+      /* #nav {
             float: center;
         } */
-        </style>
-        <title>圆周率计算多线程
-    </title>
-        <script defer src="https://cdn.staticfile.org/decimal.js/10.1.1/decimal.min.js" type="text/javascript" charset="utf-8"></script>
-        <script defer charset="utf-8" src="./mypidashujisuan.js"></script>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <meta charset="utf-8">
-    </head>
-    <body>
-        <nav class="navbar navbar-default" role="navigation">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand " href="../index.html">masx200的github主页
-                </a>
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
-                        <span class="sr-only">切换导航</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse" id="example-navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <!-- <li>
-                        <a href="../index.html">首页
-                        </a>
-                    </li> -->
-                        <li class="active">
-                            <a>圆周率计算多线程
-                        </a>
-                        </li>
-                        <li>
-                            <a href="../花密网页版-完善修改版-响应式的导航栏/index.html">花密网页版
-                        </a>
-                        </li>
-                        <li>
-                            <a href="../my-vue-router-project/index.html">基于VUE的主页
-                        </a>
-                        </li>
-                        <li>
-                            <a href="../my-react-router-test/index.html">基于REACT的主页
-                        </a>
-                        </li>
-                        <li>
-                            <a href="../JSfuck-and-hieroglyphy-Decoder-and-ENCODER/JSfuck-Decoder--and-hieroglyphy--decoder.html">JSfuck-and-hieroglyphy-Decoder-and-ENCODER
-                        </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <noscript>You need to enable JavaScript to run this app.    </noscript>
-        <div class="container">
-            <div>
-                <p>
-                    <span>
-                        选择线程个数:数量 ( 1 到 12 之间):
-                    <input class="form-control" id="thread" type="number" name="quantity" min="1" max="12">
-                    </span>
-                </p>
-                <p>
-                    <span>
-                        选择圆周率位数:数量1000* ( 1 到 100 之间):
-                    <input class="form-control" id="pichangwei" type="number" name="quantity" min="1" max="100">
-                    </span>
-                </p>
-                <button class="btn btn-info" id="start" type="button" style="
-width: 100%;
-">开始
+    </style>
+    <title>圆周率计算多线程</title>
+    <script
+      defer
+      src="https://cdn.staticfile.org/decimal.js/10.2.0/decimal.min.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script defer charset="utf-8" src="./mypidashujisuan.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta charset="utf-8" />
+    <script src="https://cdn.staticfile.org/big-integer/1.6.43/BigInteger.min.js"></script>
+  </head>
+
+  <body>
+    <!-- 升级bootstrap从3到4 -->
+    <div id="my导航栏" class="fixed-top container-fluid">
+      <!-- <nav class="navbar navbar-default" role="navigation"> -->
+      <nav class="navbar navbar-expand-sm bg-light navbar-light">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand " href="../index.html"
+              >masx200的github主页
+            </a>
+            <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+                            <span class="sr-only">切换导航</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button> -->
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#collapsibleNavbar"
+            >
+              <span class="navbar-toggler-icon"></span>
             </button>
-            </div>
-            <br>
-            <div>
-                <textarea class="form-control" cols="100" rows="100" style="width:100%;height:100%;margin:0 0;text-align:center; " width="100%" id="tp"></textarea>
-                <br>
-                <div>
-                    <textarea class="form-control" cols="100" rows="100" style="width:100%;height:100%;margin:0 0;text-align:center; " width="100%" id="tp2"></textarea>
-                </div>
-            </div>
+          </div>
+          <!-- <div class="collapse navbar-collapse" id="example-navbar-collapse"> -->
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="nav navbar-nav">
+              <li class="active nav-item">
+                <a class="nav-link">圆周率计算多线程 </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="../花密网页版-完善修改版-响应式的导航栏/index.html"
+                  class="nav-link"
+                  >花密网页版
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../my-vue-router-project/index.html" class="nav-link"
+                  >基于VUE的主页
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../my-react-router-test/index.html" class="nav-link"
+                  >基于REACT的主页
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="../JSfuck-and-hieroglyphy-Decoder-and-ENCODER/JSfuck-Decoder--and-hieroglyphy--decoder.html"
+                  class="nav-link"
+                  >JSfuck-and-hieroglyphy-Decoder-and-ENCODER
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <script src="extendmytextarea.js" defer></script>
-    </body>
+      </nav>
+    </div>
+    <noscript>You need to enable JavaScript to run this app. </noscript>
+    <div id="my主体" class="container">
+      <div>
+        <p></p>
+        <h3>计算运行速度排行:</h3>
+        <br />1.原生BigInt最快,<br />2.BigInteger.js中速,<br />3.Decimal.js最慢。
+        <hr>
+        <br />
+        <h4> 线程数为4 圆周率计算6000位测试结果</h4>
+        <br />
+        firefox 66 测试 decimal.js 达到1倍速度
+        <br />
+        firefox 66 测试 BigInteger.js 达到2.163倍速度
+        <br />
+        chrome 75 测试 decimal.js 达到3.4375倍速度
+        <br />
+        chrome 75 测试 原生BigInt 达到74.038倍速度
+        <p></p>
+        <hr>
+        <h4> 线程数为4 圆周率计算10000位测试结果</h4>
+        <br />
+        firefox 66 测试 decimal.js 达到1倍速度
+        <br />
+        firefox 66 测试 BigInteger.js 达到2.066倍速度
+        <br />
+        chrome 75 测试 decimal.js 达到3.688倍速度
+        <br />
+        chrome 75 测试 原生BigInt 达到100.773倍速度
+        <p></p>
+        <hr>
+      </div>
+
+      <div class="container">
+        <h3>BigInteger.js</h3>
+        <p>
+          BigInteger.js是Javascript的任意长度整数库，允许对无限大小的整数进行算术运算，尽管存在内存和时间限制。
+          更新（2018年12月2日）：BigInt被添加为JavaScript的本机功能。
+          此库现在可用作polyfill：如果环境支持本机BigInt，则此库充当本机实现的瘦包装器。
+          建议升级浏览器到chrome68以上,才可支持原生BigInt.
+          <b>如果浏览器原生支持BigInt,则运行速度有巨大提升!</b>
+        </p>
+        <hr />
+        <div>
+          <p>
+            <span>
+              选择线程个数:数量 ( 1 到 12 之间):
+              <input
+                class="form-control"
+                id="thread-big"
+                type="number"
+                name="quantity"
+                min="1"
+                max="12"
+              />
+            </span>
+          </p>
+          <p>
+            <span>
+              选择圆周率位数:数量1000* ( 1 到 100 之间):
+              <input
+                class="form-control"
+                id="pichangwei-big"
+                type="number"
+                name="quantity"
+                min="1"
+                max="100"
+              />
+            </span>
+          </p>
+          <button
+            class="btn btn-info"
+            id="start-big"
+            type="button"
+            style="
+        width: 100%;
+        "
+          >
+            开始
+          </button>
+        </div>
+        <br />
+        <div>
+          <textarea
+            class="form-control"
+            cols="100"
+            rows="100"
+            style="width:100%;height:100%;margin:0 0;text-align:center; "
+            width="100%"
+            id="tp-big"
+          ></textarea>
+          <br />
+          <div>
+            <textarea
+              class="form-control"
+              cols="100"
+              rows="100"
+              style="width:100%;height:100%;margin:0 0;text-align:center; "
+              width="100%"
+              id="tp2-big"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="container">
+        <h3>Decimal.js</h3>
+        <p>
+          Decimal.js是JavaScript的任意精度Decimal类型。 特征: 整数和浮点数,
+          简单但功能齐全的API,
+          复制JavaScript的Number.prototype和Math对象的许多方法,
+          还处理十六进制，二进制和八进制值,
+          比Java的BigDecimal的JavaScript版本更快，更小，也许更容易使用,
+          没有依赖, 广泛的平台兼容性：仅使用JavaScript 1.5（ECMAScript 3）功能。
+          全面的文档和测试集。
+        </p>
+        <hr />
+        <div>
+          <p>
+            <span>
+              选择线程个数:数量 ( 1 到 12 之间):
+              <input
+                class="form-control"
+                id="thread"
+                type="number"
+                name="quantity"
+                min="1"
+                max="12"
+              />
+            </span>
+          </p>
+          <p>
+            <span>
+              选择圆周率位数:数量1000* ( 1 到 100 之间):
+              <input
+                class="form-control"
+                id="pichangwei"
+                type="number"
+                name="quantity"
+                min="1"
+                max="100"
+              />
+            </span>
+          </p>
+          <button
+            class="btn btn-info"
+            id="start"
+            type="button"
+            style="
+width: 100%;
+"
+          >
+            开始
+          </button>
+        </div>
+        <br />
+        <div>
+          <textarea
+            class="form-control"
+            cols="100"
+            rows="100"
+            style="width:100%;height:100%;margin:0 0;text-align:center; "
+            width="100%"
+            id="tp"
+          ></textarea>
+          <br />
+          <div>
+            <textarea
+              class="form-control"
+              cols="100"
+              rows="100"
+              style="width:100%;height:100%;margin:0 0;text-align:center; "
+              width="100%"
+              id="tp2"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="extendmytextarea.js" defer></script>
+    <script src="../拉伸导航栏与主体部分的顶部距离.js"></script>
+    <script src="mypidashujisuan-bigint.js"></script>
+  </body>
 </html>
