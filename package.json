@@ -1,0 +1,8 @@
+{
+  "name": "Pi-calculation-multithreading",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/masx200/Pi-calculation-multithreading.git",
+  "author": "masx200 <34191203+masx200@users.noreply.github.com>",
+  "license": "MIT"
+}
