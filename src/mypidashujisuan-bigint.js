@@ -1,4 +1,3 @@
-import $ from "jquery";
 import bigInt from "big-integer";
 import MyWorker from "./mythread1-bigint.js?worker";
 var myworker = [];
@@ -10,12 +9,19 @@ export function terminateallworkers() {
     });
 }
 (() => {
+    window.addEventListener(
+        "load",
+        () => {
+            mytestpi();
+        },
+        { once: true }
+    );
     //使用bigint测试
     //   window.onload = () => {
     //     mytestpi();
     //   };
     // $('window').load(mytestpi)
-    $(document).ready(mytestpi);
+    // $(document).ready(mytestpi);
     // mytestpi;
     var myptext,
         myshurukuangneirong,
@@ -57,8 +63,8 @@ export function terminateallworkers() {
 
     function mytestpi() {
         var mystartid = "#start-big";
-        // document.getElementById("start").onclick = mystart;
-        $(mystartid).click(mystart);
+        document.querySelector(mystartid).onclick = mystart;
+        // $(mystartid).click(mystart);
         getConstpinewhighefficiency105();
     }
 
@@ -191,7 +197,8 @@ export function terminateallworkers() {
                             console.error("Error:", e.message);
                             currentValue.terminate();
                             arr[index] = void 0;
-                            $("#tp2-big").val("Error:" + e.message);
+                            document.querySelector("#tp2-big").value =
+                                "Error:" + e.message;
                             rej(new Error(e.message));
                             //   throw e;
                         };

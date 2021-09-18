@@ -1,6 +1,6 @@
 import Decimal from "decimal.js";
 import MyWorker from "./mythread1.js?worker";
-import $ from "jquery";
+
 var myworker = [];
 
 export async function decimalCalculatePi() {}
@@ -11,11 +11,18 @@ export function terminateallworkers() {
     });
 }
 (() => {
+    window.addEventListener(
+        "load",
+        () => {
+            mytestpi();
+        },
+        { once: true }
+    );
     //   window.onload = () => {
     //     mytestpi();
     //   };
     // $('window').load(mytestpi)
-    $(document).ready(mytestpi);
+    // $(document).ready(mytestpi);
     // mytestpi;
     var myptext,
         myshurukuangneirong,
@@ -56,8 +63,8 @@ export function terminateallworkers() {
     }
 
     function mytestpi() {
-        // document.getElementById("start").onclick = mystart;
-        $("#start").click(mystart);
+        document.getElementById("start").onclick = mystart;
+        // $("#start").click(mystart);
         getConstpinewhighefficiency105();
     }
 

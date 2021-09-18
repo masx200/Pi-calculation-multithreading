@@ -1,6 +1,12 @@
-import $ from "jquery";
 (() => {
-    $("#my主体").css("padding-top", $("#my导航栏").height());
+    document
+        .querySelector("#my主体")
+        .style.setProperty(
+            "padding-top",
+            document.querySelector("#my导航栏").clientHeight
+        );
+
+    // $("#my主体").css("padding-top", $("#my导航栏").height());
     function makeExpandingArea(el) {
         var timer = null;
         //由于ie8有溢出堆栈问题，故调整了这里
