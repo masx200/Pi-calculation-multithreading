@@ -1,8 +1,14 @@
 {
-  "name": "Pi-calculation-multithreading",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/masx200/Pi-calculation-multithreading.git",
-  "author": "masx200 <34191203+masx200@users.noreply.github.com>",
-  "license": "MIT"
+    "name": "@masx200/pi-calculation-multithreading",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "https://github.com/masx200/Pi-calculation-multithreading.git",
+    "author": "masx200 <34191203+masx200@users.noreply.github.com>",
+    "license": "MIT",
+    "scripts": {
+        "format": "npx prettier --write *.json *.md */*.js */*.html"
+    },
+    "devDependencies": {
+        "prettier": "^2.4.1"
+    }
 }
