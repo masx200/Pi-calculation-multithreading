@@ -12,4 +12,4 @@ export function decimalcleanup() {
 export { decimalworkersetup };
 export { bigintworkersetup };
 export { bigintCalculatePi } from "./bigintCalculatePi.js";
-export{decimalCalculatePi}from'./decimalCalculatePi.js'
+export { decimalCalculatePi } from "./decimalCalculatePi.js";

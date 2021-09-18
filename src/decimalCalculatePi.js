@@ -1,9 +1,9 @@
 import Decimal from "decimal.js";
 import { myworker } from "./mypidashujisuan";
 
-
 export async function decimalCalculatePi(createworker, piwei, threadgeshu) {
-    var p, x = 0;
+    var p,
+        x = 0;
     p = Decimal(0);
 
     Decimal.precision = piwei;

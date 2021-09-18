@@ -2,7 +2,8 @@ import bigInt from "big-integer";
 import { myworker } from "./mypidashujisuan-bigint";
 
 export async function bigintCalculatePi(createworker, piwei, threadgeshu) {
-    var p, x = 0;
+    var p,
+        x = 0;
     bigInt.abs = (n) => bigInt(n).abs();
 
     bigInt.mul = (n, m) => bigInt(n).multiply(m);
