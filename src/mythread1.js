@@ -67,7 +67,7 @@ JavaScript的任意精度Decimal类型。
         );
         console.log(...event.data);
 
-        const { p, x } = decimalchildwork(piwei, threadall, threadid);
-        postMessage([String(p), String(x)]);
+        const [p, x] = decimalchildwork(piwei, threadall, threadid);
+        postMessage([p, x]);
     });
 })();

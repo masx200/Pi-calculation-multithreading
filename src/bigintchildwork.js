@@ -69,5 +69,5 @@ export function bigintchildwork(piwei, threadall, threadid) {
         }
     }
     x = x.plus(1);
-    return { p, x };
+    return [String(p), String(x)];
 }

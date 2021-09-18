@@ -48,8 +48,8 @@ BigInteger.js是Javascript的任意长度整数库，允许对无限大小的整
         // console.log("t", t.toString())
         // console.log("p", p.toString())
 
-        const { p, x } = bigintchildwork(piwei, threadall, threadid);
-        postMessage([String(p), String(x)]);
+        const [p, x] = bigintchildwork(piwei, threadall, threadid);
+        postMessage([p, x]);
     });
     // }
 })();

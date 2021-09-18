@@ -18,9 +18,9 @@ export function terminateallworkers() {
     // mytestpi;
     var myptext,
         myshurukuangneirong,
-        p=bigInt(0),
+        p = bigInt(0),
         threadgeshu,
-        x=0,
+        x = 0,
         piwei,
         // myworker,
         eventdata,
@@ -161,7 +161,7 @@ export function terminateallworkers() {
                     // arr[index] = arr[index] || new Worker("mythread1-bigint.js");
 
                     return new Promise((res, rej) => {
-                        arr[index].onmessage = function (event) {
+                        currentValue.onmessage = function (event) {
                             console.log(
                                 "主线程从副线程" +
                                     (index + 1) +
@@ -182,22 +182,24 @@ export function terminateallworkers() {
                             // finishflag[index] = 1;
                             // threadfinish();
                         };
-                        arr[index].onerror = (e) => {
+                        currentValue.onerror = (e) => {
                             // for (var key in e) {
                             //     console.error(key, e[key])
                             // }
                             // console.error(e.message)
                             console.error("Error:", e.message);
-                            arr[index].terminate();
+                            currentValue.terminate();
+                            arr[index] = void 0;
                             $("#tp2-big").val("Error:" + e.message);
                             rej(new Error(e.message));
                             //   throw e;
                         };
-                        arr[index].postMessage([piwei, threadgeshu, index]);
+                        currentValue.postMessage([piwei, threadgeshu, index]);
                     });
                 })
             );
-            threadfinish();
+            let resultpi = p.toString()[0] + "." + p.toString().slice(1);
+            threadfinish(resultpi, x);
         } else {
             alert("输入错误");
             myinput2.value = 4;
@@ -205,7 +207,7 @@ export function terminateallworkers() {
         }
     }
 
-    function threadfinish() {
+    function threadfinish(p, x) {
         var myeleid3 = "tp-big";
         var myeleid4 = "tp2-big";
         var mytextarea1 = document.getElementById(myeleid3);
@@ -234,13 +236,7 @@ export function terminateallworkers() {
         // p +
         // "  \n"
 
-        mytextarea2.value =
-            "圆周率" +
-            piwei +
-            "位" +
-            p.toString()[0] +
-            "." +
-            p.toString().slice(1);
+        mytextarea2.value = "圆周率" + piwei + "位" + p;
         var myptext = mytextarea1;
         myshurukuangneirong += String(eventdata);
         myptext.value = myshurukuangneirong;

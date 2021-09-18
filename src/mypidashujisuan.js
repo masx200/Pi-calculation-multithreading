@@ -17,9 +17,9 @@ export function terminateallworkers() {
     // mytestpi;
     var myptext,
         myshurukuangneirong,
-        p=Decimal(0),
+        p = Decimal(0),
         threadgeshu,
-        x=0,
+        x = 0,
         piwei,
         // myworker,
         eventdata,
@@ -141,7 +141,7 @@ export function terminateallworkers() {
                     // arr[index] = arr[index] || new Worker("mythread1.js");
                     console.log(myworker);
                     return new Promise((res, rej) => {
-                        arr[index].onmessage = function (event) {
+                        currentValue.onmessage = function (event) {
                             console.log(
                                 "主线程从副线程" +
                                     (index + 1) +
@@ -163,22 +163,23 @@ export function terminateallworkers() {
                             //  threadfinish();
                             res();
                         };
-                        arr[index].onerror = (e) => {
+                        currentValue.onerror = (e) => {
                             console.error("Error", e.message);
                             // for (var key in e) {
                             //     console.error(key, e[key])
                             // }
                             // console.error(e)
-                            arr[index].terminate();
+                            currentValue.terminate();
                             arr[index] = void 0;
                             rej(new Error(e.message));
                             // throw e;
                         };
-                        arr[index].postMessage([piwei, threadgeshu, index]);
+                        currentValue.postMessage([piwei, threadgeshu, index]);
                     });
                 })
             );
-            threadfinish();
+            let resultpi = p.toString()
+            threadfinish(resultpi,x);
         } else {
             alert("输入错误");
             document.getElementById("pichangwei").value = 4;
@@ -186,7 +187,7 @@ export function terminateallworkers() {
         }
     }
 
-    function threadfinish() {
+    function threadfinish(p,x) {
         //     if (
         //         true
         //         /*threadgeshu ==

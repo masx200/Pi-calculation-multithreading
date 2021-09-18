@@ -1,7 +1,7 @@
 import Decimal from "decimal.js";
 
 export function decimalchildwork(piwei, threadall, threadid) {
-    const precision = piwei ;
+    const precision = piwei;
     Decimal.precision = precision;
     var p = new Decimal(0);
     var a = new Decimal(1);
@@ -38,5 +38,5 @@ export function decimalchildwork(piwei, threadall, threadid) {
         }
     }
     x = x.plus(1);
-    return { p, x };
+    return [String(p), String(x)];
 }
