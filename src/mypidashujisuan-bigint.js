@@ -18,7 +18,7 @@
         // finishflag,
         durt,
         testname;
-
+        myworker = [];
     function lashentextarea(...ids) {
         setTimeout(function () {
             for (value of ids) {
@@ -102,7 +102,7 @@
         var myinput2 = document.getElementById("pichangwei-big");
         if (
             myinput1.value >= 1 &&
-            myinput1.value <= 12 &&
+            myinput1.value <= 16 &&
             myinput2.value >= 1 &&
             myinput2.value <= 100
         ) {
@@ -130,9 +130,9 @@
             strt = new Date().getTime();
             p = new bigInt(0);
 
-            myworker = [];
+            // myworker = [];
             myworker.length = threadgeshu;
-
+            // myworker.fill(undefined)
             // finishflag = [];
             // finishflag.length = threadgeshu;
             // var worker1;
@@ -140,15 +140,16 @@
             //     worker1 = new Worker("mythread1-bigint.js");
             // }
 
-            // for (var i = 0, len = threadgeshu; i < len; i++) {
-            //     myworker[i] = worker1;
-            // }
+            for (var i = 0, len = threadgeshu; i < len; i++) {
+                myworker[i] = myworker[i] ||new Worker("mythread1-bigint.js");
+            }
+            console.log(myworker)
             await Promise.all(
                 myworker.map(function (currentValue, index, arr) {
-                    arr[index] = undefined;
+                    // arr[index] = undefined;
 
-                    arr[index] = new Worker("mythread1-bigint.js");
-                    arr[index].postMessage([piwei, threadgeshu, index]);
+                    // arr[index] = arr[index] || new Worker("mythread1-bigint.js");
+
                     return new Promise((res, rej) => {
                         arr[index].onmessage = function (event) {
                             console.log(
@@ -182,6 +183,7 @@
                             rej(new Error(e.message));
                             //   throw e;
                         };
+                        arr[index].postMessage([piwei, threadgeshu, index]);
                     });
                 })
             );
@@ -233,10 +235,10 @@
         myshurukuangneirong += String(eventdata);
         myptext.value = myshurukuangneirong;
         // jisuanfinishflag = 1;
-        myworker.forEach(function (currentValue, index, arr) {
-            arr[index].terminate();
-            arr[index] = void 0;
-        });
+        // myworker.forEach(function (currentValue, index, arr) {
+        //     arr[index].terminate();
+        //     arr[index] = void 0;
+        // });
         x = 0;
         //alert("ok")
         setTimeout(function () {
