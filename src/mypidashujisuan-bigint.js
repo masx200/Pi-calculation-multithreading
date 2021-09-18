@@ -18,7 +18,7 @@
         // finishflag,
         durt,
         testname;
-        myworker = [];
+    myworker = [];
     function lashentextarea(...ids) {
         setTimeout(function () {
             for (value of ids) {
@@ -141,9 +141,9 @@
             // }
 
             for (var i = 0, len = threadgeshu; i < len; i++) {
-                myworker[i] = myworker[i] ||new Worker("mythread1-bigint.js");
+                myworker[i] = myworker[i] || new Worker("mythread1-bigint.js");
             }
-            console.log(myworker)
+            console.log(myworker);
             await Promise.all(
                 myworker.map(function (currentValue, index, arr) {
                     // arr[index] = undefined;
