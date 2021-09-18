@@ -2,7 +2,10 @@
     "name": "@masx200/pi-calculation-multithreading",
     "version": "1.0.0",
     "main": "index.js",
-    "repository": "https://github.com/masx200/Pi-calculation-multithreading.git",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/masx200/Pi-calculation-multithreading.git"
+    },
     "author": "masx200 <34191203+masx200@users.noreply.github.com>",
     "license": "MIT",
     "scripts": {
@@ -10,5 +13,11 @@
     },
     "devDependencies": {
         "prettier": "^2.4.1"
-    }
+    },
+    "description": "Pi calculation, multithreading, based on large number frames decimal.js and webworker 圆周率计算，多线程，基于大数框架 decimal.js 和 webworker 圆周率计算-可设置圆周率位数-可选择线程个数-多线程大数框架 webworker 输出 useragent 大数框架",
+    "bugs": {
+        "url": "https://github.com/masx200/Pi-calculation-multithreading/issues"
+    },
+    "homepage": "https://github.com/masx200/Pi-calculation-multithreading#readme",
+    "keywords": []
 }
