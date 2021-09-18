@@ -1,6 +1,6 @@
 (() => {
     document.querySelector("#my主体").style["padding-top"] =
-        document.querySelector("#my导航栏").clientHeight+'px';
+        document.querySelector("#my导航栏").clientHeight + "px";
 
     // $("#my主体").css("padding-top", $("#my导航栏").height());
     function makeExpandingArea(el) {
