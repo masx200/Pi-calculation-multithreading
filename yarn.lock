@@ -217,6 +217,11 @@ html-minifier-terser@^5.1.1:
     relateurl "^0.2.7"
     terser "^4.6.3"
 
+husky@^7.0.1:
+  version "7.0.2"
+  resolved "https://registry.nlark.com/husky/download/husky-7.0.2.tgz#21900da0f30199acca43a46c043c4ad84ae88dff"
+  integrity sha1-IZANoPMBmazKQ6RsBDxK2Erojf8=
+
 is-core-module@^2.2.0:
   version "2.6.0"
   resolved "https://registry.nlark.com/is-core-module/download/is-core-module-2.6.0.tgz?cache=0&sync_timestamp=1629224656971&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fis-core-module%2Fdownload%2Fis-core-module-2.6.0.tgz#d7553b2526fe59b92ba3e40c8df757ec8a709e19"
