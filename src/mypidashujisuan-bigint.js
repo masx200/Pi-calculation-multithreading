@@ -18,9 +18,9 @@ export function terminateallworkers() {
     // mytestpi;
     var myptext,
         myshurukuangneirong,
-        p,
+        p=bigInt(0),
         threadgeshu,
-        x,
+        x=0,
         piwei,
         // myworker,
         eventdata,
