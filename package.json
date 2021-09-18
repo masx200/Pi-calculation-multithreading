@@ -9,12 +9,15 @@
     },
     "author": "masx200 <34191203+masx200@users.noreply.github.com>",
     "license": "MIT",
-    "scripts": {  "precommit": "npm run format ||node -v",
+    "scripts": {
+        "precommit": "npm run format ||node -v",
         "start": "vite serve --config vite.config.ts",
         "build": "vite build --config vite.config.ts",
-        "format": "npx prettier --write *.json *.md */*.js */*.html *.ts"   ,"prepare": "husky install"
+        "format": "npx prettier --write *.json *.md */*.js */*.html *.ts",
+        "prepare": "husky install"
     },
-    "devDependencies": {"husky": "^7.0.1",
+    "devDependencies": {
+        "husky": "^7.0.1",
         "@types/html-minifier-terser": "^6.0.0",
         "@types/node": "^16.9.2",
         "jquery": "^3.6.0",

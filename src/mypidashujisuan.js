@@ -178,8 +178,8 @@ export function terminateallworkers() {
                     });
                 })
             );
-            let resultpi = p.toString()
-            threadfinish(resultpi,x);
+            let resultpi = p.toString();
+            threadfinish(resultpi, x);
         } else {
             alert("输入错误");
             document.getElementById("pichangwei").value = 4;
@@ -187,7 +187,7 @@ export function terminateallworkers() {
         }
     }
 
-    function threadfinish(p,x) {
+    function threadfinish(p, x) {
         //     if (
         //         true
         //         /*threadgeshu ==
