@@ -1,7 +1,8 @@
+import { decimalchildwork } from "./decimalchildwork";
 (() => {
-    importScripts(
-        "https://cdn.staticfile.org/decimal.js/10.2.0/decimal.min.js"
-    );
+    // importScripts(
+    //     "https://cdn.staticfile.org/decimal.js/10.2.0/decimal.min.js"
+    // );
     // importScripts("./decimal.min.js");
     /** 
      * 
@@ -66,48 +67,7 @@ JavaScript的任意精度Decimal类型。
         );
         console.log(...event.data);
 
-        Decimal.precision = piwei + 1;
-        var p = new Decimal(0);
-        var a = new Decimal(1);
-        var h = 1;
-        var x = new Decimal(0);
-        var fu = 1;
-        var t = new Decimal(1);
-        for (var i = 0, len = threadid; i < len; i++) {
-            fu = -1 * fu;
-            a = Decimal.mul(a, 1024);
-            x = x.plus(1);
-        }
-        while (Decimal.abs(t).cmp(new Decimal("1e-" + (1 + piwei))) != -1) {
-            t = Decimal.mul(h, fu)
-
-                .mul(
-                    Decimal.div(-(2 ** 5), Decimal.mul(4, x).plus(1))
-                        .plus(Decimal.div(-1, Decimal.mul(4, x).plus(3)))
-                        .plus(Decimal.div(2 ** 8, Decimal.mul(10, x).plus(1)))
-                        .plus(
-                            Decimal.div(-(2 ** 6), Decimal.mul(10, x).plus(3))
-                        )
-                        .plus(
-                            Decimal.div(-(2 ** 2), Decimal.mul(10, x).plus(5))
-                        )
-                        .plus(
-                            Decimal.div(-(2 ** 2), Decimal.mul(10, x).plus(7))
-                        )
-                        .plus(Decimal.div(1, Decimal.mul(10, x).plus(9)))
-                )
-                .div(Decimal.mul(2 ** 6, a));
-
-            p = Decimal.add(p, t);
-            if (Decimal.abs(t).cmp(new Decimal("1e-" + (1 + piwei))) == -1)
-                break;
-
-            for (var i = 0, len = threadall; i < len; i++) {
-                fu = -1 * fu;
-                a = Decimal.mul(a, 1024);
-                x = x.plus(1);
-            }
-        }
-        postMessage(["" + p, "" + x.plus(1)]);
+        const { p, x } = decimalchildwork(piwei, threadall, threadid);
+        postMessage([String(p), String(x)]);
     });
 })();

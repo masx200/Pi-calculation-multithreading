@@ -1,3 +1,4 @@
+import $ from "jquery";
 (() => {
     $("#my主体").css("padding-top", $("#my导航栏").height());
     function makeExpandingArea(el) {
@@ -84,9 +85,9 @@
     setmytextareinit("tp", "tp2", "tp-big", "tp2-big");
 
     function setmytextareinit(...id) {
-        for (value of id) {
+        for (let value of id) {
             var textarea = document.getElementById(value);
-            textarea.scrollHeight = 60;
+            // textarea.scrollHeight = 60;
             textarea.style.height = "60px";
             makeExpandingArea(textarea);
         }

@@ -1,3 +1,13 @@
+import $ from "jquery";
+import bigInt from "big-integer";
+import MyWorker from "./mythread1-bigint.js?worker";
+var myworker = [];
+export function terminateallworkers() {
+    myworker.forEach(function (currentValue, index, arr) {
+        currentValue?.terminate();
+        arr[index] = void 0;
+    });
+}
 (() => {
     //使用bigint测试
     //   window.onload = () => {
@@ -12,16 +22,16 @@
         threadgeshu,
         x,
         piwei,
-        myworker,
+        // myworker,
         eventdata,
         strt,
         // finishflag,
         durt,
         testname;
-    myworker = [];
+    // myworker = [];
     function lashentextarea(...ids) {
         setTimeout(function () {
-            for (value of ids) {
+            for (let value of ids) {
                 var myptext = document.getElementById(value);
                 var el = myptext;
 
@@ -141,7 +151,7 @@
             // }
 
             for (var i = 0, len = threadgeshu; i < len; i++) {
-                myworker[i] = myworker[i] || new Worker("mythread1-bigint.js");
+                myworker[i] = myworker[i] || createworker();
             }
             console.log(myworker);
             await Promise.all(
@@ -254,3 +264,8 @@
         // }
     }
 })();
+function createworker() {
+    return new MyWorker(/* new URL("mythread1-bigint.js", import.meta.url), {
+        type: "module",
+    } */);
+}

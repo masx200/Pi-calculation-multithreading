@@ -1,3 +1,13 @@
+import Decimal from "decimal.js";
+import MyWorker from "./mythread1.js?worker";
+import $ from "jquery";
+var myworker = [];
+export function terminateallworkers() {
+    myworker.forEach(function (currentValue, index, arr) {
+        currentValue?.terminate();
+        arr[index] = void 0;
+    });
+}
 (() => {
     //   window.onload = () => {
     //     mytestpi();
@@ -11,16 +21,16 @@
         threadgeshu,
         x,
         piwei,
-        myworker,
+        // myworker,
         eventdata,
         strt,
         //  finishflag,
         durt,
         testname;
-    myworker = [];
+
     function lashentextarea(...ids) {
         setTimeout(function () {
-            for (value of ids) {
+            for (let value of ids) {
                 var myptext = document.getElementById(value);
                 var el = myptext;
 
@@ -121,7 +131,7 @@
       }
 */
             for (var i = 0, len = threadgeshu; i < len; i++) {
-                myworker[i] = myworker[i] || new Worker("mythread1.js");
+                myworker[i] = myworker[i] || createworker();
             }
             console.log(myworker);
             await Promise.all(
@@ -226,3 +236,8 @@
         // }
     }
 })();
+function createworker() {
+    return new MyWorker(/* new URL("mythread1.js", import.meta.url), {
+        type: "module",
+    } */);
+}
