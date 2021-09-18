@@ -2,6 +2,8 @@ import Decimal from "decimal.js";
 import MyWorker from "./mythread1.js?worker";
 import $ from "jquery";
 var myworker = [];
+
+export async function decimalCalculatePi() {}
 export function terminateallworkers() {
     myworker.forEach(function (currentValue, index, arr) {
         currentValue?.terminate();

@@ -2,6 +2,7 @@ import $ from "jquery";
 import bigInt from "big-integer";
 import MyWorker from "./mythread1-bigint.js?worker";
 var myworker = [];
+export async function bigintCalculatePi() {}
 export function terminateallworkers() {
     myworker.forEach(function (currentValue, index, arr) {
         currentValue?.terminate();
