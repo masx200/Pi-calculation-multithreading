@@ -1,9 +1,8 @@
-import Decimal from "decimal.js";
+import { decimalCalculatePi } from "./decimalCalculatePi";
 import MyWorker from "./mythread1.js?worker";
 
-var myworker = [];
+export var myworker = [];
 
-export async function decimalCalculatePi() {}
 export function terminateallworkers() {
     myworker.forEach(function (currentValue, index, arr) {
         currentValue?.terminate();
@@ -26,9 +25,9 @@ export function terminateallworkers() {
     // mytestpi;
     var myptext,
         myshurukuangneirong,
-        p = Decimal(0),
+        // p = Decimal(0),
         threadgeshu,
-        x = 0,
+        // x = 0,
         piwei,
         // myworker,
         eventdata,
@@ -73,7 +72,7 @@ export function terminateallworkers() {
         document.getElementById("pichangwei").value = 3;
         // jisuanfinishflag = 1;
         threadgeshu = 8;
-        x = 0;
+        // x = 0;
         // piwei = 3000;
 
         myptext = document.getElementById("tp");
@@ -120,75 +119,22 @@ export function terminateallworkers() {
 
             myshurukuangneirong += String(eventdata);
             myptext.value = myshurukuangneirong;
-            Decimal.precision = piwei;
+
             console.log(testname);
             console.time(testname);
             strt = new Date().getTime();
-            p = new Decimal(0);
+            // p = new Decimal(0);
 
-            myworker.length = threadgeshu;
-            // myworker.fill(undefined);
-            //   finishflag = [];
-            //  finishflag.length = threadgeshu;
-            /* var worker1;
-      if (typeof worker1 == "undefined") {
-        worker1 = new Worker("mythread1.js");
-      }
-
-      for (var i = 0, len = threadgeshu; i < len; i++) {
-        myworker[i] = worker1;
-      }
-*/
-            for (var i = 0, len = threadgeshu; i < len; i++) {
-                myworker[i] = myworker[i] || createworker();
+            try {
+                const [resultpi, x] = await decimalCalculatePi(
+                    createworker,
+                    piwei,
+                    threadgeshu
+                );
+                threadfinish(resultpi, x);
+            } catch (error) {
+                document.getElementById("tp2").value = "Error:" + String(error);
             }
-            console.log(myworker);
-            await Promise.all(
-                myworker.map(function (currentValue, index, arr) {
-                    // arr[index] = undefined;
-
-                    // arr[index] = arr[index] || new Worker("mythread1.js");
-                    console.log(myworker);
-                    return new Promise((res, rej) => {
-                        currentValue.onmessage = function (event) {
-                            console.log(
-                                "主线程从副线程" +
-                                    (index + 1) +
-                                    "接收" +
-                                    "event.data\n"
-                            );
-                            console.log(
-                                "第一个参数",
-                                event.data[0],
-                                "\n第二个参数",
-                                event.data[1]
-                            );
-                            //   console.log(...event.data);
-
-                            var p1 = new Decimal(event.data[0]);
-                            p = Decimal.add(p, p1);
-                            x = Math.max(x, parseInt(event.data[1]));
-                            //  finishflag[index] = 1;
-                            //  threadfinish();
-                            res();
-                        };
-                        currentValue.onerror = (e) => {
-                            console.error("Error", e.message);
-                            // for (var key in e) {
-                            //     console.error(key, e[key])
-                            // }
-                            // console.error(e)
-                            currentValue.terminate();
-                            arr[index] = void 0;
-                            rej(new Error(e.message));
-                            // throw e;
-                        };
-                        currentValue.postMessage([piwei, threadgeshu, index]);
-                    });
-                })
-            );
-            let resultpi = p.toString();
-            threadfinish(resultpi, x);
         } else {
             alert("输入错误");
             document.getElementById("pichangwei").value = 4;
@@ -231,7 +177,7 @@ export function terminateallworkers() {
         //     arr[index].terminate();
         //     arr[index] = void 0;
         // });
-        x = 0;
+        // x = 0;
         //alert("ok")
         setTimeout(function () {
             // myptext.style.height = myptext.scrollHeight + "px";
