@@ -177,6 +177,7 @@
       // jisuanfinishflag = 1;
       myworker.forEach(function(currentValue, index, arr) {
         arr[index].terminate();
+        arr[index]=void 0
       });
       x = 0;
       //alert("ok")
