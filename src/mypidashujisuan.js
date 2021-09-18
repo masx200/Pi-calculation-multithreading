@@ -14,7 +14,7 @@
     myworker,
     eventdata,
     strt,
-    finishflag,
+  //  finishflag,
     durt,
     testname;
 
@@ -70,7 +70,7 @@
     // }, 0);
   }
 
-  function mystart() {
+  async function mystart() {
     // jisuanfinishflag = 0;
 
     if (
@@ -103,9 +103,9 @@
       myworker = [];
       myworker.length = threadgeshu;
 
-      finishflag = [];
-      finishflag.length = threadgeshu;
-      var worker1;
+   //   finishflag = [];
+    //  finishflag.length = threadgeshu;
+     /* var worker1;
       if (typeof worker1 == "undefined") {
         worker1 = new Worker("mythread1.js");
       }
@@ -113,7 +113,7 @@
       for (var i = 0, len = threadgeshu; i < len; i++) {
         myworker[i] = worker1;
       }
-
+*/
       myworker.forEach(function(currentValue, index, arr) {
         arr[index] = undefined;
 
@@ -132,8 +132,8 @@
           var p1 = new Decimal(event.data[0]);
           p = Decimal.add(p, p1);
           x = Math.max(x, parseInt(event.data[1]));
-          finishflag[index] = 1;
-          threadfinish();
+        //  finishflag[index] = 1;
+        //  threadfinish();
         };
         arr[index].onerror = e => {
           console.error("Error", e.message);
@@ -153,11 +153,11 @@
   }
 
   function threadfinish() {
-    if (
-      threadgeshu ==
+    if (true
+      /*threadgeshu ==
       finishflag.filter(function(currentValue) {
         return currentValue == 1;
-      }).length
+      }).length*/
     ) {
       console.timeEnd(testname);
       var endt = new Date().getTime();
