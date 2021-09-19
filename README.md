@@ -19,8 +19,6 @@ Pi calculation, multithreading, based on large number frames decimal.js and webw
 <b>如果浏览器原生支持BigInt,则运行速度有巨大提升!</b>
 </p>
 
-
-
 <h3>计算运行速度排行:</h3>
 <br />1.原生BigInt最快,<br />2.BigInteger.js中速,<br />3.Decimal.js最慢。
 <hr>
@@ -48,20 +46,19 @@ chrome 75 测试 原生BigInt 达到100.773倍速度
 <p></p>
 <hr>
 
-
 可以测试浏览器的 JavaScript 运行引擎速度
 
 建议在最新版本的 chrome 或者 Firefox 或者 safari 中运行，否则速度可能特别慢
+
 ```
 UserAgent: Mozilla/5.0 (Linux; Android 9; MHA-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.136 Mobile Safari/537.36
 开始圆周率多线程测试
 线程数为 8
-圆周率计算 1000 位  
-计算圆周率中......  
-计算完成,用时 1.476 秒第 340 次  
+圆周率计算 1000 位
+计算圆周率中......
+计算完成,用时 1.476 秒第 340 次
 圆周率 1000 位
 ```
-
 
 [查看算法](src/pi_calc.AsciiMath)
 
