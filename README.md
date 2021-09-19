@@ -88,6 +88,14 @@ https://pi-calculation-multithreading.pages.dev/
 
 返回值 2:计算迭代次数
 
+## 主线程中关闭所有`webworker`的方法
+
+`bigintcleanup`和`decimalcleanup`
+
+## 子线程中添加消息事件处理程序
+
+`bigintworkersetup`和`decimalworkersetup`
+
 # 使用方法
 
 ## 在 `webworker` 文件中添加消息事件处理程序
@@ -100,7 +108,7 @@ bigintworkersetup();
 
 ## 在主线程文件中
 
-###当需要关闭所有 `webworker` 的时候使用如下函数
+### 当需要关闭所有 `webworker` 的时候使用如下函数
 
 ```js
 import { bigintcleanup } from "@masx200/pi-calculation-multithreading";
