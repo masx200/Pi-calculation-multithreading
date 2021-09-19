@@ -67,3 +67,60 @@ UserAgent: Mozilla/5.0 (Linux; Android 9; MHA-AL00) AppleWebKit/537.36 (KHTML, l
 # 在线演示
 
 https://pi-calculation-multithreading.pages.dev/
+
+# API
+
+[类型声明](dist/index.d.ts)
+
+## 主线程中使用的计算圆周率的函数
+
+`bigintCalculatePi`:使用 "big-integer"进行圆周率计算
+
+`decimalCalculatePi`:使用 "decimal.js"进行圆周率计算
+
+参数 1:创建`webworker`的函数
+
+参数 2:要计算圆周率的位数
+
+参数 3:要开启的多线程个数
+
+返回值 1:圆周率字符串
+
+返回值 2:计算迭代次数
+
+# 使用方法
+
+## 在 `webworker` 文件中添加消息事件处理程序
+
+```js
+import { bigintworkersetup } from "@masx200/pi-calculation-multithreading";
+
+bigintworkersetup();
+```
+
+## 在主线程文件中
+
+###当需要关闭所有 `webworker` 的时候使用如下函数
+
+```js
+import { bigintcleanup } from "@masx200/pi-calculation-multithreading";
+
+bigintcleanup();
+```
+
+### 启动`webworker`并计算圆周率
+
+```js
+import { bigintCalculatePi } from "@masx200/pi-calculation-multithreading";
+import MyWorker from "./mythread1-bigint.js?worker";
+
+//创建webworker的函数
+
+function createworker() {
+    return new MyWorker();
+}
+```
+
+```js
+const [resultpi, x] = await bigintCalculatePi(createworker, piwei, threadgeshu);
+```
