@@ -3,8 +3,10 @@ import commonjs from "@rollup/plugin-commonjs";
 import noderesolve from "@rollup/plugin-node-resolve";
 import { terser } from "rollup-plugin-terser";
 import ts from "rollup-plugin-ts";
-import babel from "@rollup/plugin-babel";import rollupExternalModules from "rollup-external-modules";
-export default defineConfig({ external: rollupExternalModules,
+import babel from "@rollup/plugin-babel";
+import rollupExternalModules from "rollup-external-modules";
+export default defineConfig({
+    external: rollupExternalModules,
     plugins: [
         noderesolve(),
         commonjs(),
