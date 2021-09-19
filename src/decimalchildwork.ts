@@ -1,8 +1,12 @@
 import Decimal from "decimal.js";
 
-export function decimalchildwork(piwei, threadall, threadid) {
+export function decimalchildwork(
+    piwei: number,
+    threadall: number,
+    threadid: number
+): [string, string] {
     const precision = piwei;
-    Decimal.precision = precision;
+    Decimal.set({ precision: precision });
     var p = new Decimal(0);
     var a = new Decimal(1);
     var h = 1;

@@ -1,4 +1,5 @@
-import { bigintchildwork } from "./bigintchildwork.js";
+//@ts-ignore
+import { bigintchildwork } from "./bigintchildwork";
 
 export function bigintworkersetup() {
     (() => {

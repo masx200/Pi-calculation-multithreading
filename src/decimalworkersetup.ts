@@ -1,3 +1,4 @@
+//@ts-ignore
 import { decimalchildwork } from "./decimalchildwork";
 
 export function decimalworkersetup() {

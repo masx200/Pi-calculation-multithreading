@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "types": ["vite/client"],
+        "removeComments": true,
+        "strict": true,
+        "declaration": true,
+        "esModuleInterop": true
+    }
+}

@@ -1,13 +1,17 @@
 import Decimal from "decimal.js";
-import { myworker } from "./mypidashujisuan";
+import { myworker } from "./decimal-myworker";
 
-export async function decimalCalculatePi(createworker, piwei, threadgeshu) {
-    var p,
+export async function decimalCalculatePi(
+    createworker: () => Worker,
+    piwei: number,
+    threadgeshu: number
+): Promise<[string, number]> {
+    var p: Decimal,
         x = 0;
-    p = Decimal(0);
+    p = new Decimal(0);
 
-    Decimal.precision = piwei;
-    myworker.length = threadgeshu;
+    Decimal.set({ precision: piwei });
+    // myworker.length = threadgeshu;
     // myworker.fill(undefined);
     //   finishflag = [];
     //  finishflag.length = threadgeshu;
@@ -21,7 +25,11 @@ myworker[i] = worker1;
 }
 */
     for (var i = 0, len = threadgeshu; i < len; i++) {
-        myworker[i] = myworker[i] || createworker();
+        if (myworker.length >= threadgeshu) {
+            break;
+        } else {
+            myworker.push(createworker());
+        }
     }
     console.log(myworker);
     await Promise.all(
@@ -29,7 +37,7 @@ myworker[i] = worker1;
             // arr[index] = undefined;
             // arr[index] = arr[index] || new Worker("mythread1.js");
             console.log(myworker);
-            return new Promise((res, rej) => {
+            return new Promise<void>((res, rej) => {
                 currentValue.onmessage = function (event) {
                     console.log(
                         "主线程从副线程" + (index + 1) + "接收" + "event.data\n"
@@ -55,7 +63,7 @@ myworker[i] = worker1;
                     // }
                     // console.error(e)
                     currentValue.terminate();
-                    arr[index] = void 0;
+                    // arr[index] = void 0;
                     rej(new Error(e.error + e.message));
                     // throw e;
                 };

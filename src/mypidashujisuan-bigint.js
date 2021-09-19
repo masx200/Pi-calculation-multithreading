@@ -1,12 +1,5 @@
 import { bigintCalculatePi } from "./bigintCalculatePi";
 import MyWorker from "./mythread1-bigint.js?worker";
-export var myworker = [];
-export function terminateallworkers() {
-    myworker.forEach(function (currentValue, index, arr) {
-        currentValue?.terminate();
-        arr[index] = void 0;
-    });
-}
 (() => {
     window.addEventListener(
         "load",

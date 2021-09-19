@@ -1,6 +1,10 @@
 # Pi-calculation-multithreading
 
-Pi calculation, multithreading, based on large number frames decimal.js and webworker 圆周率计算，多线程，基于大数框架 decimal.js 和 webworker 圆周率计算-可设置圆周率位数-可选择线程个数-多线程大数框架 webworker 输出 useragent 大数框架
+Pi calculation, multithreading, based on large number frames decimal.js and webworker
+
+圆周率计算，多线程，基于大数框架 decimal.js 和 webworker
+
+圆周率计算-可设置圆周率位数-可选择线程个数-多线程大数框架 webworker 输出 useragent 大数框架
 
 # 圆周率计算多线程,使用 BigInteger.js 和浏览器原生的 BigInt 之后速度得到巨大提升!
 
