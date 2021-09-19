@@ -1,6 +1,6 @@
 import { bigintworkersetup } from "./bigintworkersetup.js";
 import { decimalworkersetup } from "./decimalworkersetup.js";
-import { terminateallworkers as terminateallworkers1 } from "./bigint-terminateallworkers.js";
+import { terminateallworkers as terminateallworkers1 } from "./bigint-terminateallworkers";
 import { terminateallworkers as terminateallworkers2 } from "./decimal-terminateallworkers";
 export function bigintcleanup() {
     terminateallworkers1();

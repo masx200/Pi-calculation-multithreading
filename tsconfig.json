@@ -1,9 +1,12 @@
 {
+    "include": ["src"],
     "compilerOptions": {
         "types": ["vite/client"],
         "removeComments": true,
         "strict": true,
         "declaration": true,
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        "target": "esnext",
+        "module": "esnext"
     }
 }
