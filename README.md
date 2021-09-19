@@ -70,7 +70,7 @@ https://pi-calculation-multithreading.pages.dev/
 
 # API
 
-[类型声明](src/index.d.ts)
+[类型声明](src/index.ts)
 
 ## 主线程中使用的计算圆周率的函数
 
