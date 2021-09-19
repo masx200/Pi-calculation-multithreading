@@ -4,7 +4,7 @@
         "access": "public"
     },
     "name": "@masx200/pi-calculation-multithreading",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "types": "dist/index.d.ts",
     "main": "dist/index.js",
     "module": "dist/index.js",
