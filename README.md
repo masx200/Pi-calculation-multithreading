@@ -62,6 +62,8 @@ UserAgent: Mozilla/5.0 (Linux; Android 9; MHA-AL00) AppleWebKit/537.36 (KHTML, l
 
 [查看算法](src/pi_calc.AsciiMath)
 
+[查看示例](src/index.html)
+
 # 在线演示
 
 https://pi-calculation-multithreading.pages.dev/
