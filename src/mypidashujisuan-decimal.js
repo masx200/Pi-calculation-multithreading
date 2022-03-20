@@ -1,5 +1,5 @@
 import { decimalCalculatePi } from "./decimalCalculatePi";
-import MyWorker from "./mythread1.js?worker";
+import MyWorker from "./mythread1-decimal.js?worker";
 
 (() => {
     window.addEventListener(

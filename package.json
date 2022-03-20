@@ -4,9 +4,9 @@
         "access": "public"
     },
     "name": "@masx200/pi-calculation-multithreading",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "types": "dist/index.d.ts",
-    "main": "dist/index.js",
+    "main": "dist/index.cjs",
     "module": "dist/index.js",
     "repository": {
         "type": "git",
@@ -17,28 +17,36 @@
     "scripts": {
         "rollup": "rollup -c rollup.config.js",
         "precommit": "npm run format ||node -v",
-        "start": "vite serve --config vite.config.ts",
+        "dev": "vite serve --config vite.config.ts",
         "build": "vite build --config vite.config.ts",
         "format": "npx prettier --write *.json *.md */*.js */*.html *.ts */*.ts *.js",
         "prepare": "husky install"
     },
     "devDependencies": {
+        "@babel/code-frame": "^7.16.7",
         "@babel/core": "^7.15.5",
         "@babel/plugin-proposal-nullish-coalescing-operator": "^7.14.5",
         "@babel/plugin-proposal-optional-chaining": "^7.14.5",
         "@rollup/plugin-babel": "^5.3.0",
         "@rollup/plugin-commonjs": "^20.0.0",
         "@rollup/plugin-node-resolve": "^13.0.4",
+        "@types/babel__code-frame": "^7.0.3",
+        "@types/ejs": "^3.1.0",
+        "@types/eslint": "^8.4.1",
         "@types/html-minifier-terser": "^6.0.0",
         "@types/node": "^16.9.2",
+        "ejs": "^3.1.6",
+        "eslint": "^8.11.0",
         "husky": "^7.0.1",
         "prettier": "^2.4.1",
-        "rollup": "^2.56.3",
+        "rollup": "^2.70.1",
         "rollup-external-modules": "^2.0.0",
         "rollup-plugin-terser": "^7.0.2",
-        "rollup-plugin-ts": "^1.4.2",
-        "typescript": "^4.4.3",
+        "rollup-plugin-ts": "^2.0.5",
+        "tslib": "^2.3.1",
+        "typescript": "^4.6.2",
         "vite": "^2.8.6",
+        "vite-plugin-checker": "^0.4.3",
         "vite-plugin-html": "^2.1.0"
     },
     "description": "Pi calculation, multithreading, based on large number frames decimal.js and webworker 圆周率计算，多线程，基于大数框架 decimal.js 和 webworker 圆周率计算-可设置圆周率位数-可选择线程个数-多线程大数框架 webworker 输出 useragent 大数框架",
@@ -53,6 +61,8 @@
     },
     "files": [
         "dist/index.d.ts",
-        "dist/index.js"
-    ]
+        "dist/index.js",
+        "dist/index.cjs"
+    ],
+    "packageManager": "yarn@3.2.0"
 }

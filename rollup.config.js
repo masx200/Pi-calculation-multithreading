@@ -11,7 +11,7 @@ export default defineConfig({
         noderesolve(),
         commonjs(),
 
-        ts({}),
+        ts({ transpiler: "typescript" }),
         babel({
             extensions: [".js", ".jsx", ".es6", ".es", ".mjs", ".ts"],
             babelHelpers: "bundled",
@@ -26,5 +26,8 @@ export default defineConfig({
         }),
     ],
     input: "src/index.ts",
-    output: { format: "esm", file: "dist/index.js" },
+    output: [
+        { format: "esm", file: "dist/index.js" },
+        { format: "cjs", file: "dist/index.cjs" },
+    ],
 });
