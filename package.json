@@ -64,5 +64,8 @@
         "dist/index.js",
         "dist/index.cjs"
     ],
-    "packageManager": "yarn@3.2.0"
+    "packageManager": "yarn@3.2.0",
+    "resolutions": {
+        "minimist": "1.2.6"
+    }
 }
