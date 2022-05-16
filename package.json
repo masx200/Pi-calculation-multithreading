@@ -47,7 +47,7 @@
         "typescript": "^4.6.2",
         "vite": "^2.8.6",
         "vite-plugin-checker": "^0.4.3",
-        "vite-plugin-html": "^2.1.0"
+        "vite-plugin-html": "^3.2.0"
     },
     "description": "Pi calculation, multithreading, based on large number frames decimal.js and webworker 圆周率计算，多线程，基于大数框架 decimal.js 和 webworker 圆周率计算-可设置圆周率位数-可选择线程个数-多线程大数框架 webworker 输出 useragent 大数框架",
     "bugs": {
