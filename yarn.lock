@@ -396,8 +396,8 @@ __metadata:
     "@types/eslint": ^8.4.1
     "@types/html-minifier-terser": ^6.0.0
     "@types/node": ^17.0.33
-    big-integer: ^1.6.48
-    decimal.js: ^10.3.0
+    big-integer: ^1.6.51
+    decimal.js: ^10.3.1
     ejs: ^3.1.8
     eslint: ^8.11.0
     husky: ^8.0.1
@@ -800,7 +800,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"big-integer@npm:^1.6.48":
+"big-integer@npm:^1.6.51":
   version: 1.6.51
   resolution: "big-integer@npm:1.6.51"
   checksum: 3d444173d1b2e20747e2c175568bedeebd8315b0637ea95d75fd27830d3b8e8ba36c6af40374f36bdaea7b5de376dcada1b07587cb2a79a928fccdb6e6e3c518
@@ -1145,7 +1145,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"decimal.js@npm:^10.3.0":
+"decimal.js@npm:^10.3.1":
   version: 10.3.1
   resolution: "decimal.js@npm:10.3.1"
   checksum: 0351ac9f05fe050f23227aa6a4573bee2d58fa7378fcf28d969a8c789525032effb488a90320fd3fe86a66e17b4bc507d811b15eada5b7f0e7ec5d2af4c24a59

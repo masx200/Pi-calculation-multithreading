@@ -56,8 +56,8 @@
     "homepage": "https://github.com/masx200/Pi-calculation-multithreading#readme",
     "keywords": [],
     "dependencies": {
-        "big-integer": "^1.6.48",
-        "decimal.js": "^10.3.0"
+        "big-integer": "^1.6.51",
+        "decimal.js": "^10.3.1"
     },
     "files": [
         "dist/index.d.ts",
