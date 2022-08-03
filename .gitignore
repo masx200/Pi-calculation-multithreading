@@ -61,3 +61,4 @@ typings/
 .next
 *.zip
 .yarn/install-state.gz
+.vscode/settings.json

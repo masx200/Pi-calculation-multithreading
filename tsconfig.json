@@ -2,8 +2,8 @@
     "include": ["src", "vite.config.ts"],
     "compilerOptions": {
         "moduleResolution": "node",
-        "skipDefaultLibCheck": false,
-        "skipLibCheck": false,
+        "skipDefaultLibCheck": true,
+        "skipLibCheck": true,
         "allowJs": false,
         "checkJs": false,
         "types": ["vite/client"],

@@ -25,7 +25,7 @@ export default defineConfig({
             output: { beautify: true, comments: false },
         }),
     ],
-    input: "src/index.ts",
+    input: "./src/index.ts",
     output: [
         { format: "esm", file: "dist/index.js" },
         { format: "cjs", file: "dist/index.cjs" },
