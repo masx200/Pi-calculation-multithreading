@@ -62,3 +62,4 @@ typings/
 *.zip
 .yarn/install-state.gz
 .vscode/settings.json
+yarn.lock
